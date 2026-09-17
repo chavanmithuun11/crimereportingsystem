@@ -1,0 +1,97 @@
+@model CrimeReportingSystem.Models.CrimeReport
+
+@{
+    ViewData["Title"] = "Report a Crime";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="card shadow border-0">
+                <div class="card-header bg-dark text-white py-3">
+                    <h2 class="mb-0">Report a Crime</h2>
+                    <p class="mb-0 mt-1">Please provide accurate information about the incident.</p>
+                </div>
+
+                <div class="card-body p-4">
+
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success">
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+
+                    <form asp-controller="CrimeReports" asp-action="Create" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="FullName" class="form-label fw-semibold"></label>
+                                <input asp-for="FullName" class="form-control" placeholder="Enter your full name" />
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="CrimeType" class="form-label fw-semibold"></label>
+                                <select asp-for="CrimeType" class="form-select">
+                                    <option value="">-- Select Crime Type --</option>
+                                    <option>Theft</option>
+                                    <option>Fraud</option>
+                                    <option>Cyber Crime</option>
+                                    <option>Assault</option>
+                                    <option>Robbery</option>
+                                    <option>Missing Person</option>
+                                    <option>Property Damage</option>
+                                    <option>Other</option>
+                                </select>
+                                <span asp-validation-for="CrimeType" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Location" class="form-label fw-semibold"></label>
+                            <input asp-for="Location" class="form-control" placeholder="Enter incident location" />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="IncidentDate" class="form-label fw-semibold"></label>
+                            <input asp-for="IncidentDate" class="form-control" type="date" />
+                            <span asp-validation-for="IncidentDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Description" class="form-label fw-semibold"></label>
+                            <textarea asp-for="Description"
+                                      class="form-control"
+                                      rows="6"
+                                      placeholder="Describe the incident in detail"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-dark px-4">
+                                Submit Report
+                            </button>
+
+                            <a asp-controller="CrimeReports"
+                               asp-action="Admin"
+                               class="btn btn-outline-secondary px-4">
+                                Admin Dashboard
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
