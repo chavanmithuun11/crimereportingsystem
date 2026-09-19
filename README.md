@@ -79,7 +79,7 @@ CrimeReportingSystem
 
 The Admin Login page provides authorized administrators with access to the crime report management system.
 
-![Crime Reporting System - Admin Login](crs-3d-1-admin-login.png )
+![Crime Reporting System - Admin Login](screenshots/crs-3d-1-admin-login.png )
 
 ---
 
@@ -87,7 +87,7 @@ The Admin Login page provides authorized administrators with access to the crime
 
 The Admin Dashboard provides administrators with a centralized interface to view and manage submitted crime reports.
 
-![Crime Reporting System - Admin Dashboard](crs-3d-2-admin-dashboard.png)
+![Crime Reporting System - Admin Dashboard](screenshots/crs-3d-2-admin-dashboard.png)
 
 ---
 
@@ -95,7 +95,7 @@ The Admin Dashboard provides administrators with a centralized interface to view
 
 The Report a Crime page allows users to submit crime-related information through a structured reporting form.
 
-![Crime Reporting System - Report a Crime](crs-3d-3-report-a-crime.png)
+![Crime Reporting System - Report a Crime](screenshots/crs-3d-3-report-a-crime.png)
 
 ---
 
@@ -103,7 +103,7 @@ The Report a Crime page allows users to submit crime-related information through
 
 The Crime Details page displays the complete information associated with a submitted crime report.
 
-![Crime Reporting System - Crime Details](crs-3d-4-report-details.png)
+![Crime Reporting System - Crime Details](screenshots/crs-3d-4-report-details.png)
 
 ---
 
